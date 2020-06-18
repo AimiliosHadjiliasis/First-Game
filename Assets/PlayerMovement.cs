@@ -1,0 +1,19 @@
+﻿using UnityEngine;
+
+public class PlayerMovement : MonoBehaviour
+{
+    //Connect components
+    public Rigidbody rb;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        rb.AddForce(0,0,2000 * Time.deltaTime);
+    }
+}
