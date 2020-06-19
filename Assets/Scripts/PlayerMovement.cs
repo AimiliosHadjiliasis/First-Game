@@ -8,11 +8,6 @@ public class PlayerMovement : MonoBehaviour
     public float forwardForce = 800f;
     public float sidewaysForce = 600f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     //When we are using a physics system is good to use FixedUpdate function
@@ -31,6 +26,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey("a"))
         {
             rb.AddForce(-sidewaysForce *Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+        }
+
+        if (rb.position.y < -1f)
+        {
+            FindObjectOfType<GameManagerr>().EndGame();
         }
     }
 }

@@ -11,6 +11,7 @@ public class PlayerCollision : MonoBehaviour
     //variable that we created. So we give a reference to the the movment of our player.
     public PlayerMovement movement;
 
+
     //Funcition that identifies collision between 2 objects
     //Unity identify it 
     void OnCollisionEnter(Collision collisionInfo)
@@ -19,6 +20,8 @@ public class PlayerCollision : MonoBehaviour
         if (collisionInfo.collider.tag == "Obstacle")
         {
             movement.enabled = false;
+            FindObjectOfType<GameManagerr>().EndGame();
+        
         }
     }
 }
